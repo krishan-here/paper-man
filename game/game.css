@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+}
+.gameover{
+    position: absolute;
+    text-align: center;
+    /* justify-content: center; */
+    left: 30%;
+    top: 30%;
+    width: 400px;
+    height: 200px;
+    background:url('gameover.jpg') no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px black;
+    visibility: hidden;
+    
+}
+.gameover button{
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    visibility: hidden;
+}
+.gameani{
+    animation: game 3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+@keyframes game {
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width: 400px;
+        height: 200px;
+    }
+}
+.hero{
+    background: url("hero.gif") no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 0px;
+    height: 250px;
+    /* border: 2px solid red; */
+    width: 250px;
+}
+
+.jump{
+    animation: jump 0.5s linear;
+}
+@keyframes jump {
+    0%{
+        bottom: 0px;
+    }
+    50%{
+        bottom: 300px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+
+.zombie{
+    background: url("zombie.gif") no-repeat;
+    /* border: 2px solid red; */
+    background-size: contain;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 200px;
+    width: 150px;
+}
+.zmove{
+    animation: zombie 5s linear infinite;
+}
+@keyframes zombie{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: 0vw;
+    }
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+}
+.score{
+    font-size: large;
+    padding: 10px;
+    width: 120px;
+    margin: 5px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px black;
+}
+
+.bar{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px black;
+    margin-top: 40px;
+    margin-left: 250px;
+    overflow: hidden;
+}
+.fill{
+    text-align: center;
+    width: 0px;
+    height: 40px;
+    background-color: rgb(199, 18, 18);
+}
+
+
+/* shell */
+.shell{
+    background:url('shell.jpg') no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+    bottom: 100px;
+    position: absolute;
+    visibility: hidden;
+}
+.shellmove{
+    animation: smove 5s linear infinite;
+}
+@keyframes smove{
+    0%{
+
+    }
+    100%{
+        left: 100vw;
+    }
+}

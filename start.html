@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <title>start game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'danger';
+            /* src: url('/fonts/Thorletto\ \(free\).ttf'); */
+            src: url('/game/fonts/Thorletto\ \(free\).ttf');
+        }
+        .start {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .start h1{
+            position: absolute;
+            top: 10px;
+            font-family: 'danger';
+            color: rgb(199, 18, 18);
+        }
+        .start img{
+            position: absolute;
+            left: 10px;
+        }
+        .show {
+            width: 400px;
+            height: 300px;
+            box-shadow: 0px 0px 7px black;
+            border-radius: 5px;
+            display: flex;
+            padding: 30px;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+
+        .show button {
+            border: none;
+            width: 100px;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(107, 102, 102);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .show button:hover {
+            background-color: rgb(199, 18, 18);
+        }
+        .show i{
+            position: absolute;
+            top: 230px;
+            color: rgb(199, 18, 18);
+        }
+        .rules {
+            width: 80vw;
+            height: 80vh;
+            background-color: #fff;
+            position: absolute;
+            box-shadow: 0px 0px 7px black;
+            visibility:hidden;
+            font-size: large;
+            padding: 10px;
+            color: rgb(199, 18, 18);
+        }
+        .rules i{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            color: rgb(143, 138, 138);
+            margin: 2px;
+            cursor: pointer;
+        }
+        .rules i:hover{
+            color: rgb(199, 18, 18);
+        }
+        .rules img{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="start">
+        <h1>Paper man: The ultimate fight</h1>
+        <img src="/game/fire.png" alt="hero img">
+        <div class="rules">
+            <i class="far fa-2x fa-window-close" onclick="closerule()"></i>
+            <div>
+                <h2>Movements</h2>
+                <li>press up key for jump</li>
+                <li>press right key for forward</li>
+                <li>press left key for backward</li>
+                <img src="/game/keywords.jpg" alt="">
+                <br>
+                <h2>Shooting</h2>
+                <li>For Shooting you have to score 100 points and when the progress bar full you automatically able to shoot the Zombie</li>
+                <li>press enter key to shoot the Zombie</li>
+            </div>
+        </div>
+        <div class="show">
+            <i class="fas fa-7x fa-skull"></i>
+            <button onclick="openrule()">rules</button>
+            <button onclick="opengame()">let's Play</button>
+        </div>
+    </div>
+    <script>
+
+        const opengame = () => {
+            open('/game/game.html');
+        };
+        const openrule = () => {
+            document.querySelector('.rules').style.visibility='visible';
+            document.querySelector('.start').style.visibility='hidden';
+        };
+        const closerule=()=>{
+            document.querySelector('.rules').style.visibility='hidden';
+            document.querySelector('.start').style.visibility='visible';
+        };
+    </script>
+</body>
+
+</html>
